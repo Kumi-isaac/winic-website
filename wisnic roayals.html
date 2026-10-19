@@ -1,0 +1,741 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wisnic Royals Academy | Royals with Excellence Values</title>
+
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* --- CSS VARIABLES & RESET --- */
+      :root {
+        --primary-navy: #0b1d3a;
+        --royal-gold: #d4af37;
+        --gold-hover: #b59226;
+        --accent-blue: #1a365d;
+        --light-bg: #f8fafc;
+        --white: #ffffff;
+        --text-dark: #2d3748;
+        --text-muted: #718096;
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: var(--text-dark);
+        background-color: var(--white);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand-font {
+        font-family: "Cinzel", serif;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* --- UTILITY CLASSES --- */
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        border: none;
+      }
+
+      .btn-gold {
+        background-color: var(--royal-gold);
+        color: var(--primary-navy);
+      }
+
+      .btn-gold:hover {
+        background-color: var(--gold-hover);
+        color: var(--white);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--royal-gold);
+        color: var(--royal-gold);
+        background: transparent;
+      }
+
+      .btn-outline:hover {
+        background-color: var(--royal-gold);
+        color: var(--primary-navy);
+      }
+
+      .section-padding {
+        padding: 80px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-header h2 {
+        font-size: 2.2rem;
+        color: var(--primary-navy);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+
+      .section-header h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--royal-gold);
+      }
+
+      /* --- HEADER & NAVIGATION --- */
+      .top-bar {
+        background-color: var(--primary-navy);
+        color: var(--white);
+        padding: 8px 0;
+        font-size: 0.85rem;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      }
+
+      .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .top-info span {
+        margin-right: 20px;
+      }
+
+      .top-info i {
+        color: var(--royal-gold);
+        margin-right: 5px;
+      }
+
+      header {
+        background-color: var(--white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo i {
+        font-size: 2rem;
+        color: var(--royal-gold);
+      }
+
+      .logo-text {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--primary-navy);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        color: var(--primary-navy);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--royal-gold);
+      }
+
+      .hamburger {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--primary-navy);
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        background:
+          linear-gradient(rgba(11, 29, 58, 0.75), rgba(11, 29, 58, 0.75)),
+          url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80")
+            center/cover no-repeat;
+        height: 85vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .hero-content h1 {
+        font-size: 3.2rem;
+        margin-bottom: 20px;
+        color: var(--white);
+      }
+
+      .hero-content h1 span {
+        color: var(--royal-gold);
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 30px;
+        color: #e2e8f0;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      /* --- FEATURES / HIGHLIGHTS --- */
+      .features {
+        margin-top: -50px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .feature-card {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        border-top: 4px solid var(--royal-gold);
+        transition: var(--transition);
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .feature-card i {
+        font-size: 2.5rem;
+        color: var(--primary-navy);
+        margin-bottom: 15px;
+      }
+
+      .feature-card h3 {
+        margin-bottom: 10px;
+        color: var(--primary-navy);
+      }
+
+      /* --- ABOUT SECTION --- */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-text h3 {
+        font-size: 1.8rem;
+        color: var(--primary-navy);
+        margin-bottom: 15px;
+      }
+
+      .about-text p {
+        margin-bottom: 15px;
+        color: var(--text-muted);
+      }
+
+      .about-img img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* --- ACADEMICS SECTION --- */
+      .academics {
+        background-color: var(--light-bg);
+      }
+
+      .acad-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .acad-card {
+        background: var(--white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .acad-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .acad-info {
+        padding: 25px;
+      }
+
+      .acad-info h3 {
+        color: var(--primary-navy);
+        margin-bottom: 10px;
+      }
+
+      /* --- CONTACT & FOOTER --- */
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #cbd5e0;
+        border-radius: 4px;
+        font-family: inherit;
+      }
+
+      footer {
+        background-color: var(--primary-navy);
+        color: var(--white);
+        padding: 50px 0 20px;
+        border-top: 4px solid var(--royal-gold);
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h4 {
+        color: var(--royal-gold);
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-col ul li a {
+        color: #a0aec0;
+        transition: var(--transition);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--white);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        color: #a0aec0;
+        font-size: 0.9rem;
+      }
+
+      /* --- RESPONSIVE MEDIA QUERIES --- */
+      @media (max-width: 768px) {
+        .top-bar {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .nav-links {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          background-color: var(--white);
+          flex-direction: column;
+          padding: 20px 0;
+          gap: 15px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          display: none;
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .hero-content h1 {
+          font-size: 2.2rem;
+        }
+
+        .about-content,
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- TOP HEADER BAR -->
+    <div class="top-bar">
+      <div class="container top-bar-content">
+        <div class="top-info">
+          <span><i class="fas fa-phone"></i> +1 (555) 019-2834</span>
+          <span><i class="fas fa-envelope"></i> info@wisnicroyals.edu</span>
+        </div>
+        <div class="top-socials">
+          <a href="#" style="color: white; margin-left: 10px"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" style="color: white; margin-left: 10px"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" style="color: white; margin-left: 10px"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header>
+      <div class="container navbar">
+        <a href="#" class="logo">
+          <i class="fas fa-crown"></i>
+          <span class="logo-text">Wisnic Royals</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <h1>Nurturing <span>Future Leaders</span> With Excellence</h1>
+        <p>
+          Welcome to Wisnic Royals Academy, where character meets academic
+          distinction. Empowering young minds to rule their future with
+          knowledge and integrity.
+        </p>
+        <div class="hero-buttons">
+          <a href="#admissions" class="btn btn-gold">Apply Now</a>
+          <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHT FEATURES -->
+    <section class="features container">
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Academic Excellence</h3>
+          <p>
+            Rigorous curriculum tailored to foster critical thinking and global
+            competitiveness.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-users"></i>
+          <h3>Expert Faculty</h3>
+          <p>
+            Dedicated teachers committed to nurturing every student's individual
+            potential.
+          </p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-palette"></i>
+          <h3>Holistic Development</h3>
+          <p>
+            Comprehensive extracurricular programs including arts, sports, and
+            leadership.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Our Academy</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <h3>Building Royalty in Mind and Character</h3>
+            <p>
+              At Wisnic Royals Academy, we believe education is the cornerstone
+              of great leadership. Founded on principles of integrity,
+              innovation, and inclusivity, our academy provides an environment
+              where curiosity is celebrated and excellence is achieved.
+            </p>
+            <p>
+              Our state-of-the-art facilities and holistic learning approach
+              ensure that every student is equipped intellectually, socially,
+              and morally for the challenges of tomorrow.
+            </p>
+            <a href="#admissions" class="btn btn-gold" style="margin-top: 15px"
+              >Join Our Community</a
+            >
+          </div>
+          <div class="about-img">
+            <img
+              src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Students in Classroom"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMICS SECTION -->
+    <section class="section-padding academics" id="academics">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Academic Programs</h2>
+        </div>
+        <div class="acad-grid">
+          <div class="acad-card">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Primary Education"
+            />
+            <div class="acad-info">
+              <h3>Primary Education</h3>
+              <p>
+                Foundational learning focused on literacy, numeracy, social
+                skills, and creative exploration.
+              </p>
+            </div>
+          </div>
+          <div class="acad-card">
+            <img
+              src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Junior High"
+            />
+            <div class="acad-info">
+              <h3>Junior High</h3>
+              <p>
+                Deepening core subject mastery, analytical thinking, and
+                introduction to specialized fields.
+              </p>
+            </div>
+          </div>
+          <div class="acad-card">
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Senior High"
+            />
+            <div class="acad-info">
+              <h3>Senior High</h3>
+              <p>
+                Advanced preparation for university matriculation, career
+                pathways, and leadership roles.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMISSIONS / CONTACT SECTION -->
+    <section class="section-padding" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get in Touch</h2>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p style="margin-bottom: 20px">
+              Have questions about admissions, fees, or our campus? We are here
+              to help!
+            </p>
+            <p>
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: var(--royal-gold)"
+              ></i>
+              123 Education Lane, Knowledge City
+            </p>
+            <p>
+              <i
+                class="fas fa-phone"
+                style="color: var(--royal-gold); margin-top: 10px"
+              ></i>
+              +1 (555) 019-2834
+            </p>
+            <p>
+              <i
+                class="fas fa-envelope"
+                style="color: var(--royal-gold); margin-top: 10px"
+              ></i>
+              admissions@wisnicroyals.edu
+            </p>
+          </div>
+          <div class="contact-form">
+            <form
+              onsubmit="
+                event.preventDefault();
+                alert(
+                  'Thank you for reaching out! We will get back to you shortly.',
+                );
+              "
+            >
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required />
+              </div>
+              <div class="form-group">
+                <textarea
+                  rows="5"
+                  placeholder="Your Message or Inquiry"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="margin-bottom: 15px">
+            <i class="fas fa-crown"></i>
+            <span class="logo-text" style="color: white">Wisnic Royals</span>
+          </div>
+          <p style="color: #a0aec0">
+            Raising royal minds for global leadership through academic rigor and
+            personal development.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#academics">Academics</a></li>
+            <li><a href="#contact">Admissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#">Primary School</a></li>
+            <li><a href="#">Junior High</a></li>
+            <li><a href="#">Senior High</a></li>
+            <li><a href="#">E-Learning Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wisnic Royals Academy. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR MOBILE MENU -->
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("navLinks");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu when a link is clicked
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
